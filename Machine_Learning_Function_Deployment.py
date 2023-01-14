@@ -88,8 +88,11 @@ xx=st.radio("Do you want Dummy Variable or Label Encoder on Character Categorica
 Dependent=st.selectbox("Please select the Dependent Variable from the Column's list",options=df.columns)
 X=df.drop(columns=[Dependent])
 y=df[Dependent]
-if df[Dependent].dtype==np.object:
+zz=df[Dependent].dtype==np.object
+if zz==True:
     y=le.fit_transform(y)
+else:
+         y=df[Dependent]
 
 
 #Predict_threshold
