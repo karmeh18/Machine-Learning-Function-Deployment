@@ -142,7 +142,7 @@ if np.round(first_iter/y.shape[0],3)>=0.65:
             X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
             X_train_reshape,y_train_reshape=rus.fit_resample(X_train,y_train)
 else:
-    pass
+    X_train_reshape, X_test, y_train_reshape, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 ML_option=st.selectbox("Which Algorithm you want to use?",options=["Logistic Regression","Random Forest Classifier","Naive Bayes"])
 if ML_option=="Logistic Regression":
     #Logistic Regression
