@@ -90,7 +90,7 @@ X=df.drop(columns=[Dependent])
 y=df[Dependent]
 zz=df[Dependent].dtype==np.object
 if zz==True:
-    y=le.fit_transform(y)
+    y=le.fit_transform(df[Dependent])
 else:
          y=df[Dependent]
 
