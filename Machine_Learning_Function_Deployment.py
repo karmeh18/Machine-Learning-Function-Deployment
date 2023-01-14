@@ -131,16 +131,16 @@ if np.round(first_iter/y.shape[0],3)>=0.65:
          print("The iteration of {} category is {} that means the concentration of {} category on overall data is {}%".format(second,second_iter,second,np.round(second_iter/y.shape[0],3)*100))
          print()
          imbalance=st.selectbox("Imbalance Target Output has been detected, for Stratified Random Sampling type YES else RUS OR ROS will gets activated!! ",options=["Yes","No"])
-    if imbalance=="Yes":
-        X_train_reshape, X_test, y_train_reshape, y_test = train_test_split(X, y, test_size=0.3, random_state=42,stratify=y)
-    else:
-        answer=st.radio("Do you want to continue with Random Over Sampling or Random Under Sampling please answer in ROS/ros or RUS/rus---- ",["ROS","RUS"])
-        if answer=="ROS" or answer=="ros" or answer=="Ros":
-            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-            X_train_reshape,y_train_reshape=ros.fit_resample(X_train,y_train)
-        else:
-            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-            X_train_reshape,y_train_reshape=rus.fit_resample(X_train,y_train)
+         if imbalance=="Yes":
+                  X_train_reshape, X_test, y_train_reshape, y_test = train_test_split(X, y, test_size=0.3, random_state=42,stratify=y)
+         else:
+                  answer=st.radio("Do you want to continue with Random Over Sampling or Random Under Sampling please answer in ROS/ros or RUS/rus---- ",["ROS","RUS"])
+                  if answer=="ROS" or answer=="ros" or answer=="Ros":
+                           X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+                           X_train_reshape,y_train_reshape=ros.fit_resample(X_train,y_train)
+                  else:
+                           X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+                           X_train_reshape,y_train_reshape=rus.fit_resample(X_train,y_train)
 else:
     X_train_reshape, X_test, y_train_reshape, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 ML_option=st.selectbox("Which Algorithm you want to use?",options=["Logistic Regression","Random Forest Classifier","Naive Bayes"])
