@@ -81,11 +81,11 @@ time_col=st.radio("Do you have date or time related column",["Yes","No"])
 if time_col=="Yes":
     time=st.selectbox("Select the column",options=df.columns)
     df[time]=pd.to_datetime(df[time])
+Dependent=st.selectbox("Please select the Dependent Variable from the Column's list",options=df.columns)
 raw=st.radio("Do you want to transform the data or continue with RAW data",["Yes","No"])
 if raw=="Yes":
     x1=st.radio("Do you want to Standardization or Normalization on Numerical Columns",["Standardization","Normalization"])
 xx=st.radio("Do you want Dummy Variable or Label Encoder on Character Categorical Columns",["Dummy Variable","Label Encoder"])
-Dependent=st.selectbox("Please select the Dependent Variable from the Column's list",options=df.columns)
 X=df.drop(columns=[Dependent])
 y=df[Dependent]
 zz=df[Dependent].dtype==np.object
