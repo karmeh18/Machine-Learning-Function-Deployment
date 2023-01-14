@@ -112,7 +112,7 @@ if raw=="Yes":
 else:
     pass
     #Label Encoder and Dummy Variable
-if xx=="Lebel Encoder":
+if xx=="Label Encoder":
     for i in object_columns:
         X[i]=le.fit_transform(X[i])
 else:
@@ -130,7 +130,7 @@ if np.round(first_iter/y.shape[0],3)>=0.65:
          print('The iteration of {} category is {} that means the concentration of {} category on overall data is {}%'.format(first,first_iter,first,np.round((first_iter/y.shape[0])*100,3)))
          print("The iteration of {} category is {} that means the concentration of {} category on overall data is {}%".format(second,second_iter,second,np.round(second_iter/y.shape[0],3)*100))
          print()
-    imbalance=st.selectbox("Imbalance Target Output has been detected, for Stratified Random Sampling type YES else RUS OR ROS will gets activated!! ",options=["Yes","No"])
+         imbalance=st.selectbox("Imbalance Target Output has been detected, for Stratified Random Sampling type YES else RUS OR ROS will gets activated!! ",options=["Yes","No"])
     if imbalance=="Yes":
         X_train_reshape, X_test, y_train_reshape, y_test = train_test_split(X, y, test_size=0.3, random_state=42,stratify=y)
     else:
