@@ -127,7 +127,7 @@ second=pd.Series(y).value_counts().index[1]
 second_iter=pd.Series(y).value_counts().values[1]
 if np.round(first_iter/y.shape[0],3)>=0.65:
          print()
-         st.write(print('The iteration of {} category is {} that means the concentration of {} category on overall data is {}%'.format(first,first_iter,first,np.round((first_iter/y.shape[0])*100,3))))
+         st.write('The iteration of {} category is {} that means the concentration of {} category on overall data is {}%'.format(first,first_iter,first,np.round((first_iter/y.shape[0])*100,3)))
          print("The iteration of {} category is {} that means the concentration of {} category on overall data is {}%".format(second,second_iter,second,np.round(second_iter/y.shape[0],3)*100))
          print()
          imbalance=st.selectbox("Imbalance Target Output has been detected, for Stratified Random Sampling type YES else RUS OR ROS will gets activated!! ",options=["Yes","No"])
