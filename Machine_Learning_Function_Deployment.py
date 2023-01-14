@@ -30,7 +30,7 @@ from PIL import Image
 
 st.title("Machine Learning Function developed by Karan Mehta")
 st.header("Below is the flow chart of the function that is being executed in background")
-image=Image.open("C:\\Users\\Karan\\Desktop\\DBS Casual Assessments\\Machine Learning\\CA1\\ML function flow chart.jpg")
+image=Image.open("ML function flow chart.jpg")
 st.write()
 st.header("To check my LinkedIn Profile click on this link [LinkedIn Profile](https://www.linkedin.com/in/karan-mehta-313412162/)")
 st.image(image,caption="Machine Learning Function Flow Chart")
