@@ -164,6 +164,10 @@ elif ML_option=="Random Forest Classifier":
     rfc_accuracy=accuracy_score(y_test,rfc_pred)
     print()
     st.write("Accuracy of RandomForestClassification on overall data is coming around at ",np.round(rfc_accuracy,3))
+    st.write()
+    st.write('''The Meaning of OOB score is that in Random Forest Classifier when the algorithm is getting trained on different subsets of data, approximately 
+    1/3rd datapoints from training subsets are unutilized. OOB Scores parameter tests the accuracy on these unutilized datapoints and can be considered as 
+    validation data points to better understand the efficiency of Random Forest Classifier''')
     st.write("Accuracy from OOB Score is: ",np.round(rfc.oob_score_,3))
     st.write()
     for i in np.round(np.arange(0,1,0.1),1):
