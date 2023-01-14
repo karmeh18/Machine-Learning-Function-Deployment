@@ -32,7 +32,6 @@ from PIL import Image
 
 
 st.title("Machine Learning Function developed by Karan Mehta")
-st.header("Below is the flow chart of the function that is being executed in background")
 st.write('''In this website, I tried to combine Data Preprocessing like Standardization/Normalization with Label Encoder and Dummy variable added with the variety
          of different Machine Learning Algorithms, You just have to upload your file the code will automatically detect the presence of Missing Values and ask to 
          treat them afterwards you just have to select the technique with any Machine Learning Algorithms and as an output you will receive different accuracies with 
@@ -43,6 +42,7 @@ st.write()
 st.header("To check my LinkedIn Profile click on this link [LinkedIn Profile](https://www.linkedin.com/in/karan-mehta-313412162/)")
 st.write()
 st.header("To check my Git profile cling on the Link [Git-Hub Profile](https://github.com/karmeh18)")
+st.header("Below is the flow chart of the function that is being executed in background")
 st.image(image,caption="Machine Learning Function Flow Chart")
 
 data_file=st.file_uploader("Upload Files",type=["csv"])
