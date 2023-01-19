@@ -44,6 +44,9 @@ st.write()
 st.header("To check my Git profile cling on the Link [Git-Hub Profile](https://github.com/karmeh18)")
 st.header("Below is the flow chart of the function that is being executed in background")
 st.image(image,caption="Machine Learning Function Flow Chart")
+st.write()
+st.write("Please click on the below buttons to download Demo datasets")
+st.download_button(label="Download Brain Stroke File",data=brain_stroke.csv)
 
 data_file=st.file_uploader("Upload Files",type=["csv"])
 if data_file is not None:
