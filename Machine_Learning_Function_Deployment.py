@@ -47,7 +47,11 @@ st.image(image,caption="Machine Learning Function Flow Chart")
 st.write()
 st.write("Please click on the below buttons to download Demo datasets")
 brain=pd.read_csv("brain_stroke.csv")
+bank=pd.read_csv("BankChurners.csv")
+diabetes=pd.read_csv("diabetes.csv")
 st.download_button(label="Download Brain Stroke File",data=brain.to_csv(index=False),file_name="brain_stroke.csv",mime="csv")
+st.download_button(label="Download Bank Churner File",data=bank.to_csv(index=False),file_name="BankChurners.csv",mime="csv")
+st.download_button(label="Download Diabetes File",data=diabetes.to_csv(index=False),file_name="diabetes.csv",mime="csv")
 
 data_file=st.file_uploader("Upload Files",type=["csv"])
 if data_file is not None:
