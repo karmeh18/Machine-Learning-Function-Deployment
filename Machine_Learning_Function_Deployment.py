@@ -46,7 +46,7 @@ st.header("Below is the flow chart of the function that is being executed in bac
 st.image(image,caption="Machine Learning Function Flow Chart")
 st.write()
 st.write("Please click on the below buttons to download Demo datasets")
-st.download_button(label="Download Brain Stroke File",data=brain_stroke.csv)
+st.download_button(label="Download Brain Stroke File",data=brain_stroke)
 
 data_file=st.file_uploader("Upload Files",type=["csv"])
 if data_file is not None:
