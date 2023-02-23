@@ -60,13 +60,16 @@ if data_file is not None:
 #Deleting Desired Columns
 delete=st.radio("Do you want to delete any columns ?",["Yes","No"])
 if delete=="Yes":
-    st.dataframe(df)
     col=st.multiselect("Please select the columns that you want to delete",df.columns)
+    st.table(df.head())
     done=st.button("Do you want to delete the colums")
     if done==True:
-        #col1=list(set(col))
         df.drop(columns=col,inplace=True)
-    st.dataframe(df)
+    else:
+         pass
+else:
+     pass
+st.table(df.head())
 #Checking and filling the missing values in the data
 object_columns=df.dtypes[df.dtypes==np.object].index
 integer_columns=df.dtypes[(df.dtypes==np.int64) | (df.dtypes==np.float64)].index
