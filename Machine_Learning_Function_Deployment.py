@@ -68,8 +68,7 @@ if delete=="Yes":
     else:
          pass
 else:
-     pass
-st.table(df.head())
+         st.table(df.head())
 #Checking and filling the missing values in the data
 object_columns=df.dtypes[df.dtypes==np.object].index
 integer_columns=df.dtypes[(df.dtypes==np.int64) | (df.dtypes==np.float64)].index
