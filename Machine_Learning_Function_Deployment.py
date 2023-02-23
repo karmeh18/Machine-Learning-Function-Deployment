@@ -64,7 +64,7 @@ if delete=="Yes":
     col=st.multiselect("Please select the columns that you want to delete",df.columns)
     done=st.button("Do you want to delete the colums")
     if done==True:
-        col1=col
+        col1=list(set(col))
         df.drop(columns=col1,inplace=True)
     st.dataframe(df)
 #Checking and filling the missing values in the data
