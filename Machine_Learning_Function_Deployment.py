@@ -65,11 +65,11 @@ if delete=="Yes":
     done=st.button("Do you want to delete the colums")
     if done==True:
         df.drop(columns=col,inplace=True)
+        st.table(df.head())
     else:
          pass
 else:
          pass
-st.table(df.head())
 #Checking and filling the missing values in the data
 object_columns=df.dtypes[df.dtypes==np.object].index
 integer_columns=df.dtypes[(df.dtypes==np.int64) | (df.dtypes==np.float64)].index
