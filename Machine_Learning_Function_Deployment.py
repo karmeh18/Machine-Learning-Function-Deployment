@@ -64,7 +64,7 @@ if delete=="Yes":
     st.table(df.head())
     done=st.button("Do you want to delete the colums")
     if done==True:
-        df.drop(columns=col,inplace=True)
+        df=df.drop(columns=col)
         st.table(df.head())
     else:
          pass
@@ -86,7 +86,7 @@ if df.isnull().sum().sum()>0:
         for i in MV_list:
             df[i]=df[i].fillna(df[i].value_counts().index[0])
         if df[integer_columns].isnull().sum().values.sum()>0:
-            df.fillna(df.median(),inplace=True)
+            df=df.fillna(df.median())
     st.table(df.isnull().sum())
     st.write("From the above it is clearly visible that the values have been replaced")
 time_col=st.radio("Do you have date or time related column",["Yes","No"])
@@ -106,7 +106,7 @@ zz=df[Dependent].dtype==np.object
 if zz==True:
     y=le.fit_transform(df[Dependent])
 else:
-         y=df[Dependent]
+         st.write("Please provide a Dependent Problem that is categorical in nature")
 
 
 #Predict_threshold
